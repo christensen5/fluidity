@@ -2563,6 +2563,16 @@ contains
             call zero(aux_vfield)
             call insert(states(p), aux_vfield, trim(aux_vfield%name))
             call deallocate(aux_vfield)
+<<<<<<< 823582413c5eeae055230d2cf9b9e3ab2c003103
+=======
+            
+          else if((prescribed).and.(trim(vfield%name)=="Velocity")) then 
+
+            call allocate(aux_vfield, vfield%dim, vfield%mesh, "Old"//trim(vfield%name), field_type = vfield%field_type)
+            call zero(aux_vfield)
+            call insert(states(p), aux_vfield, trim(aux_vfield%name))
+            call deallocate(aux_vfield)
+>>>>>>> Defined the field type of Old field to be the same type as the current field.
 
           else
 
